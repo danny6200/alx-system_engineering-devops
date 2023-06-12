@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c 1- | tr -d "c C"
+tr -d "c" | tr -d  "C"
