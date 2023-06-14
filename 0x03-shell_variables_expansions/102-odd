@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n | grep -E ":([13579]|1[13579])$"
+paste -d - - | cut -d ":" -f 1
