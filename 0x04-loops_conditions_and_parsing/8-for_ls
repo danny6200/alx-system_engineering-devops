@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Prints first portion of filename before a '-' in the current directory
 
-for file in $(ls -p | grep -v / | grep -Eo '[^-]*$'); do
-    echo "$file"
+#for file in $(ls -p | grep -v / | grep -Eo '[^-]*$'); do
+#    echo "$file"
+#done
+#!/bin/bash
+
+for file in *; do
+    if [ -f "$file" ] && [ ! -h "$file" ] && [ "$file" != "$0" ]; then
+        filename="${file##*-}"
+        echo "$filename"
+    fi
 done
