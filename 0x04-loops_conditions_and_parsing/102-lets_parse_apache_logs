@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Read the log file line by line
+while read -r line; do
+    # Extract the IP address (the first field)
+    ip_address=$(echo "$line" | awk '{print $1}')
+    
+    # Extract the status code (the second last field)
+    status_code=$(echo "$line" | awk '{print $(NF-13)}')
+    
+    # Display the IP address and status code
+    echo "$ip_address $status_code"
+done < "apache-access.log"
