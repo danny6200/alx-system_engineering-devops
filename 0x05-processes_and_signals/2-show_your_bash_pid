@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# List all process containing bash in their lines.
+# shellcheck disable=SC2009
+
+# Use ps and grep to find the Bash process
+ps aux | grep -E '[b]ash'
