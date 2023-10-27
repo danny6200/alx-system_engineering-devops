@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Prints a list of processes for all users including those without TTY in a user-oriented format with process hierarchy
+
+ps aux --forest
