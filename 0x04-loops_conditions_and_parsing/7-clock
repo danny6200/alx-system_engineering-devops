@@ -5,8 +5,10 @@ hour=0
 
 while [ $hour -le 12 ]; do
     echo "Hour: $hour"
-    for ((minute = 1; minute <= 59; minute++)); do
+    minute=0
+    while [ $minute -le 59 ]; do
         echo $minute
+	minute=$((minute + 1))
     done
     hour=$((hour + 1))
 done
