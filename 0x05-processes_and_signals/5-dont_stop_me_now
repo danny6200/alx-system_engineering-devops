@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Terminates the inifinte loop using the kill command
+
+# Start the 4-to_infinity_and_beyond script
+./4-to_infinity_and_beyond &
+
+# Capture the PID of the background process
+bg_pid=$!
+
+# Wait for the process to run for a while (you can adjust the duration as needed)
+sleep 10
+
+# Use the kill command to terminate the process by its PID
+kill "$bg_pid"
+
+echo "Terminated"
