@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Extracts needed info from /etc/passwd file.
+
+while IFS=: read -r username _ uid _ home _; do
+    echo "username: $username"
+    echo "user id: $uid"
+    echo "Home directory path: $home"
+done < /etc/passwd
