@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Manages the simulated daemon "manage_process"
+# Contains three arguments: start, stop and restart
+# Start argument: starts "manage_process"; creates "/var/run/my_process.pid" file containing its pid; displays "manage_process started"
+# Stop argument: stops process; deletes file; displays "manage_process stopped"
+# Restart argument: stops process; deletes file; starts process; creates file; displays "manage_process restarted"
+
+argument=$1
+f_pid="/var/run/my_process.pid"
+
+start() 
+{
+./manage_my_process &
+echo "$!" > "$f_pid"
+}
+
+stop()
+{
+sudo pkill -f "./manage_my_process"
+rm "$f_pid"
+}
+
+case "$argument" in
+	start)
+		echo "manage_my_process started"
+		start
+		;;
+	stop)
+		echo "manage_my_process stopped"
+		stop
+		;;
+	restart)
+		echo "manage_my_process restarted"
+		stop
+		start
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
