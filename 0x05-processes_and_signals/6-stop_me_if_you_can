@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # Terminates a process without using kill or killall
 
-# Start the 4-to_infinity_and_beyond script
-./4-to_infinity_and_beyond
-
-# Wait for the process to run for a while (you can adjust the duration as needed)
-sleep 10
-
-# Use pkill to send a SIGTERM signal to the process by its name
-pkill "4-to_infinity_and_beyond"
-echo "Terminated"
+pkill -f "4-to_infinity_and_beyond"
