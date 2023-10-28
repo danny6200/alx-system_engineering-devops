@@ -1,0 +1,17 @@
+#!/bin/bash
+# Prints a statement on receiving SIGTERM
+
+# Function to handle SIGTERM signal
+terminate() {
+    echo "I am invincible!!!"
+    exit
+}
+
+# Set up the trap to call the terminate function on SIGTERM
+trap 'terminate' SIGTERM
+
+# Infinite loop with a sleep of 2 seconds
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
