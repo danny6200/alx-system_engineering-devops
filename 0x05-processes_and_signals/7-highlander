@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # Prints a statement on receiving SIGTERM
 
 # Function to handle SIGTERM signal
