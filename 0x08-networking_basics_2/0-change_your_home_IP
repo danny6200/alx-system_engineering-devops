@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script modifies the IP for localhost and facebook
+
+sudo cp /etc/hosts ~/host.modified
+echo "127.0.0.2	localhost" > ~/host.modified
+echo "8.8.8.8  	facebook.com" >> ~/host.modified
+sudo cp -f ~/host.modified /etc/hosts
